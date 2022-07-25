@@ -30,6 +30,12 @@
 		D2618259288DDFBB00EFBF9A /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2618258288DDFBB00EFBF9A /* TeamsViewController.swift */; };
 		D261825B288DE10F00EFBF9A /* TeamsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261825A288DE10F00EFBF9A /* TeamsFactory.swift */; };
 		D261825D288DE18C00EFBF9A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261825C288DE18C00EFBF9A /* HomeRouter.swift */; };
+		D2618262288DE9A100EFBF9A /* TeamsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2618261288DE9A100EFBF9A /* TeamsAdapter.swift */; };
+		D2618264288DEC6600EFBF9A /* TeamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2618263288DEC6600EFBF9A /* TeamResponse.swift */; };
+		D2618266288DECAA00EFBF9A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2618265288DECAA00EFBF9A /* Team.swift */; };
+		D2618268288DEE8400EFBF9A /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2618267288DEE8400EFBF9A /* TeamTableViewCell.swift */; };
+		D261826A288DF73A00EFBF9A /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2618269288DF73A00EFBF9A /* TeamsViewModel.swift */; };
+		D2D6FBF5288DF74C00C82FD1 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D6FBF4288DF74C00C82FD1 /* TeamManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +64,12 @@
 		D2618258288DDFBB00EFBF9A /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		D261825A288DE10F00EFBF9A /* TeamsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsFactory.swift; sourceTree = "<group>"; };
 		D261825C288DE18C00EFBF9A /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		D2618261288DE9A100EFBF9A /* TeamsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsAdapter.swift; sourceTree = "<group>"; };
+		D2618263288DEC6600EFBF9A /* TeamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResponse.swift; sourceTree = "<group>"; };
+		D2618265288DECAA00EFBF9A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		D2618267288DEE8400EFBF9A /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		D2618269288DF73A00EFBF9A /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
+		D2D6FBF4288DF74C00C82FD1 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				D2618250288DDEED00EFBF9A /* Factory */,
+				D2D6FBF3288DF72400C82FD1 /* Manager */,
 				D261824E288DDECE00EFBF9A /* Model */,
 				D2618255288DDF6200EFBF9A /* View */,
 				D261824F288DDED400EFBF9A /* ViewModel */,
@@ -282,6 +295,8 @@
 		D261824E288DDECE00EFBF9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D2618263288DEC6600EFBF9A /* TeamResponse.swift */,
+				D2618265288DECAA00EFBF9A /* Team.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +304,7 @@
 		D261824F288DDED400EFBF9A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D2618269288DF73A00EFBF9A /* TeamsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -304,10 +320,44 @@
 		D2618255288DDF6200EFBF9A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D2618260288DE98400EFBF9A /* Adapter */,
+				D261825F288DE97C00EFBF9A /* Cell */,
+				D261825E288DE96700EFBF9A /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D261825E288DE96700EFBF9A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
 				D2618256288DDF8800EFBF9A /* TeamsView.swift */,
 				D2618258288DDFBB00EFBF9A /* TeamsViewController.swift */,
 			);
-			path = View;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D261825F288DE97C00EFBF9A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D2618267288DEE8400EFBF9A /* TeamTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D2618260288DE98400EFBF9A /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				D2618261288DE9A100EFBF9A /* TeamsAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		D2D6FBF3288DF72400C82FD1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D2D6FBF4288DF74C00C82FD1 /* TeamManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,23 +431,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D6FBF5288DF74C00C82FD1 /* TeamManager.swift in Sources */,
 				D261824C288DCE2600EFBF9A /* UIViewControllerExtensions.swift in Sources */,
 				D2618257288DDF8800EFBF9A /* TeamsView.swift in Sources */,
 				D2618235288DB4C000EFBF9A /* League.swift in Sources */,
 				D261820C288DA8F900EFBF9A /* HomeViewController.swift in Sources */,
+				D2618268288DEE8400EFBF9A /* TeamTableViewCell.swift in Sources */,
 				D2618248288DC69400EFBF9A /* URLSessionExtensions.swift in Sources */,
 				D261823D288DB5D800EFBF9A /* ImageService.swift in Sources */,
 				D2618224288DAFE400EFBF9A /* HomeFactory.swift in Sources */,
 				D261825B288DE10F00EFBF9A /* TeamsFactory.swift in Sources */,
 				D2618259288DDFBB00EFBF9A /* TeamsViewController.swift in Sources */,
+				D2618262288DE9A100EFBF9A /* TeamsAdapter.swift in Sources */,
 				D261825D288DE18C00EFBF9A /* HomeRouter.swift in Sources */,
 				D2618243288DBDCD00EFBF9A /* Observable.swift in Sources */,
+				D261826A288DF73A00EFBF9A /* TeamsViewModel.swift in Sources */,
 				D2618246288DC48E00EFBF9A /* HomeManager.swift in Sources */,
+				D2618264288DEC6600EFBF9A /* TeamResponse.swift in Sources */,
 				D2618238288DB51600EFBF9A /* HomeViewModel.swift in Sources */,
 				D261824A288DC9B900EFBF9A /* LeagueResponse.swift in Sources */,
 				D2618208288DA8F900EFBF9A /* AppDelegate.swift in Sources */,
 				D261823F288DB73200EFBF9A /* LeagueTableViewCell.swift in Sources */,
 				D261822F288DB42900EFBF9A /* HomeView.swift in Sources */,
+				D2618266288DECAA00EFBF9A /* Team.swift in Sources */,
 				D261820A288DA8F900EFBF9A /* SceneDelegate.swift in Sources */,
 				D2618241288DBD4900EFBF9A /* HomeAdapter.swift in Sources */,
 				D2618227288DB18600EFBF9A /* UIColorExtensions.swift in Sources */,

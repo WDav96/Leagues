@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct League: Decodable {
+struct League: Codable {
     let name: String?
     let sport: String?
     

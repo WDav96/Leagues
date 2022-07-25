@@ -10,8 +10,12 @@ import UIKit
 enum TeamsFactory {
     
     static func getTeamsViewController(league: League) -> TeamsViewController {
+        // manager
+        let manager = TeamManager()
+        // viewModel
+        let viewModel = TeamsViewModel(manager: manager)
         // viewController
-        let viewController = TeamsViewController()
+        let viewController = TeamsViewController(viewModel: viewModel)
         
         //viewController.league = league
         

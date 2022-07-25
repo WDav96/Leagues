@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct LeagueResponse: Decodable {
+struct LeagueResponse: Codable {
     let leagues: [League]?
 }

@@ -22,7 +22,7 @@ class TeamsView: UIView {
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(LeagueTableViewCell.self, forCellReuseIdentifier: LeagueTableViewCell.name)
+        tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.name)
         return tableView
     }()
     
@@ -53,6 +53,7 @@ class TeamsView: UIView {
     
     private func addSubViews() {
         addSubview(containerStackView)
+        containerStackView.addArrangedSubview(tableView)
         
         addConstraints()
     }

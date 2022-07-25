@@ -9,22 +9,37 @@ import Foundation
 
 extension URLSession {
     
-    func fetchData(at url: URL, completion: @escaping (Result<LeagueResponse, Error>) -> Void) {
-        self.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
+    enum CustomError: Error {
+        case invalidUrl
+        case invalidData
+    }
+    
+    func request<T: Codable>(url: URL?, expecting: T.Type, completionHandler: @escaping (Result<T, Error>) -> Void ) {
+        guard let url = url else {
+            completionHandler(.failure(CustomError.invalidData))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                if let error = error {
+                    completionHandler(.failure(error))
+                } else {
+                    completionHandler(.failure(CustomError.invalidData))
+                }
+                return
             }
             
-            if let data = data {
-                do {
-                    let data = try JSONDecoder().decode(LeagueResponse.self, from: data)
-                    completion(.success(data))
-                } catch let decoderError {
-                    completion(.failure(decoderError))
-                }
+            do {
+                let result = try JSONDecoder().decode(expecting, from: data)
+                completionHandler(.success(result))
+            }
+            catch {
+                completionHandler(.failure(error))
             }
         }
-        .resume()
+        task.resume()
+        
     }
     
 }
