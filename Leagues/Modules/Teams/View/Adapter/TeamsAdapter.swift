@@ -13,6 +13,15 @@ class TeamsAdapter: NSObject {
     
     var teams: [Team] = []
     
+    // MARK: - Internal Observable Properties
+    
+    var didSelectItemAt: Observable<Team> {
+        mutableDidSelectItemAt
+    }
+    
+    // MARK: - Private Observable Properties
+    
+    private var mutableDidSelectItemAt = MutableObservable<Team>()
     
 }
 
@@ -37,6 +46,7 @@ extension TeamsAdapter: UITableViewDataSource {
 extension TeamsAdapter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        mutableDidSelectItemAt.postValue(teams[indexPath.row])
     }
     
 }

@@ -56,8 +56,6 @@ class TeamTableViewCell: UITableViewCell {
         }
     }
     
-    var productImage: UIImage?
-    
     // MARK: - Private Properties
     
     private var imageService = ImageService()

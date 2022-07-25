@@ -9,21 +9,24 @@ import UIKit
 
 enum TeamsFactory {
     
-    static func getTeamsViewController(league: League) -> TeamsViewController {
+    static func getTeamsViewController(leagueName: String) -> TeamsViewController {
+        // router
+        let router = TeamsRouter()
         // manager
         let manager = TeamManager()
         // viewModel
-        let viewModel = TeamsViewModel(manager: manager)
+        let viewModel = TeamsViewModel(manager: manager, router: router)
         // viewController
         let viewController = TeamsViewController(viewModel: viewModel)
         
-        //viewController.league = league
+        viewController.leagueName = leagueName
+        router.viewController = viewController
         
         return viewController
     }
     
-    static func showTeamsViewController(from originViewController: UIViewController, league: League) {
-        let viewController = getTeamsViewController(league: league)
+    static func showTeamsViewController(from originViewController: UIViewController, leagueName: String) {
+        let viewController = getTeamsViewController(leagueName: leagueName)
         originViewController.navigationController?.pushViewController(viewController, animated: true)
     }
     

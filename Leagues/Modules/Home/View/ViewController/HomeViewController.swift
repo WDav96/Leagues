@@ -64,7 +64,8 @@ class HomeViewController: UIViewController {
             self?.validateEvents(event: event)
         }
         adapter.didSelectItemAt.observe { [unowned self] league in
-            self.goToTeams(league: league)
+            let leagueName = league.name
+            self.goToTeams(leagueName: leagueName ?? "")
         }
     }
 
@@ -73,8 +74,10 @@ class HomeViewController: UIViewController {
         case .isLoading(let isLoading):
             if isLoading {
                 showSpinner(onView: view)
+                print("Loading spinner...")
             } else {
                 removeSpinner()
+                print("Remove spinner...")
             }
         case .didGetData:
             updateTableView()
@@ -88,8 +91,8 @@ class HomeViewController: UIViewController {
         homeView.reloadTableViewData()
     }
 
-    private func goToTeams(league: League) {
-        viewModel.goToTeams(league: league)
+    private func goToTeams(leagueName: String) {
+        viewModel.goToTeams(leagueName: leagueName)
     }
     
 }

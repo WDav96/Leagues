@@ -8,7 +8,7 @@
 import UIKit
 
 enum HomeTransition {
-    case showTeams(league: League)
+    case showTeams(leagueName: String)
 }
 
 class HomeRouter {
@@ -21,19 +21,19 @@ class HomeRouter {
     
     func handle(transition attendanceTransition: HomeTransition) {
         switch attendanceTransition {
-        case let .showTeams(league):
-            showTeamsViewController(league: league)
+        case let .showTeams(leagueName):
+            showTeamsViewController(leagueName: leagueName)
         }
         
     }
     
     // MARK: - Private Methods
     
-    private func showTeamsViewController(league: League) {
+    private func showTeamsViewController(leagueName: String) {
         guard let viewController = viewController else {
             return
         }
-        TeamsFactory.showTeamsViewController(from: viewController, league: league)
+        TeamsFactory.showTeamsViewController(from: viewController, leagueName: leagueName)
 
     }
     

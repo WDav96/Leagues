@@ -20,6 +20,7 @@ class TeamsViewModel {
     var teams: [Team] = []
     
     var manager: TeamManager
+    var router: TeamsRouter
     
     // MARK: - Internal Observable Properties
     
@@ -33,15 +34,16 @@ class TeamsViewModel {
     
     // MARK: - Initializers
     
-    init(manager: TeamManager) {
+    init(manager: TeamManager, router: TeamsRouter) {
         self.manager = manager
+        self.router = router
     }
     
     // MARK: - Internal Methods
     
-    func getTeams() {
+    func getTeams(leagueName: String) {
         mutableOutputEvents.postValue(.isLoading(true))
-        manager.fetchTeams { [weak self] result in
+        manager.fetchTeams(leagueName: leagueName) { [weak self] result in
             self?.mutableOutputEvents.postValue(.isLoading(false))
             switch result {
             case .success(let teamsResponse):
@@ -52,6 +54,12 @@ class TeamsViewModel {
             }
         }
         mutableOutputEvents.postValue(.isLoading(false))
-   }
+        
+    }
+    
+    func goToTeamDescription(team: Team) {
+        router.handle(transition: .showTeamDescription(team: team))
+    }
+
     
 }

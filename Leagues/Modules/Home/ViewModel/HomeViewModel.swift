@@ -56,8 +56,8 @@ class HomeViewModel {
         mutableOutputEvents.postValue(.isLoading(false))
     }
     
-    func goToTeams(league: League) {
-        router.handle(transition: .showTeams(league: league))
+    func goToTeams(leagueName: String) {
+        router.handle(transition: .showTeams(leagueName: leagueName))
     }
     
 }

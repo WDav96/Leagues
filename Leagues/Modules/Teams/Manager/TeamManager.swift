@@ -9,9 +9,11 @@ import Foundation
 
 class TeamManager {
     
-    func fetchTeams(completionHandler: @escaping ((Result<TeamResponse, Error>) -> Void)){
+    func fetchTeams(leagueName: String, completionHandler: @escaping ((Result<TeamResponse, Error>) -> Void)){
         
-        guard let url = URL(string: "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=English%20Premier%20League") else { return }
+        let query = leagueName.replacingOccurrences(of: " ", with: "%20")
+        
+        guard let url = URL(string: "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l=\(query)") else { return }
         
         URLSession.shared.request(url: url, expecting: TeamResponse.self) { result in
             switch result {

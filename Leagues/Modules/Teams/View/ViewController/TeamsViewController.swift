@@ -29,11 +29,7 @@ class TeamsViewController: UIViewController {
     
     // MARK: - Internal properites
     
-    var league: League? {
-        didSet {
-            //updateTableView()
-        }
-    }
+    var leagueName: String?
     
     // MARK: - Private Properties
     
@@ -61,15 +57,22 @@ class TeamsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Teams"
-        viewModel.getTeams()
+        getTeams()
         setupBindings()
     }
     
     // MARK: - Private Methods
     
+    private func getTeams() {
+        viewModel.getTeams(leagueName: leagueName ?? "")
+    }
+    
     private func setupBindings() {
         viewModel.outputEvents.observe { [weak self] event in
             self?.validateEvents(event: event)
+        }
+        adapter.didSelectItemAt.observe { [unowned self] team in
+            self.goToTeamDescription(team: team)
         }
     }
     
@@ -78,8 +81,10 @@ class TeamsViewController: UIViewController {
         case .isLoading(let isLoading):
             if isLoading {
                 showSpinner(onView: view)
+                print("Loading spinner...")
             } else {
                 removeSpinner()
+                print("Remove spinner...")
             }
         case .didGetData:
             updateTableView()
@@ -91,6 +96,10 @@ class TeamsViewController: UIViewController {
     private func updateTableView() {
         adapter.teams = viewModel.teams
         teamsView.reloadTableViewData()
+    }
+    
+    private func goToTeamDescription(team: Team) {
+        viewModel.goToTeamDescription(team: team)
     }
 
 }
