@@ -7,7 +7,11 @@
 
 import Foundation
 
-class HomeManager {
+protocol HomeManagerProtocol {
+    func getLeagues(completionHandler: @escaping ((Result<LeagueResponse, Error>) -> Void))
+}
+
+class HomeManager: HomeManagerProtocol {
     
     func getLeagues(completionHandler: @escaping ((Result<LeagueResponse, Error>) -> Void)) {
         

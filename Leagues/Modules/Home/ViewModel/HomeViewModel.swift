@@ -19,7 +19,7 @@ class HomeViewModel {
     
     var leagues: [League] = []
     
-    var manager: HomeManager
+    var manager: HomeManagerProtocol
     var router: HomeRouter
     
     // MARK: - Internal Observable Properties
@@ -34,7 +34,7 @@ class HomeViewModel {
     
     // MARK: - Initializers
     
-    init(manager: HomeManager, router: HomeRouter) {
+    init(manager: HomeManagerProtocol, router: HomeRouter) {
         self.manager = manager
         self.router = router
     }

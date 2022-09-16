@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A65D500128CA48A70000CD88 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65D500028CA48A70000CD88 /* HomeViewModelTests.swift */; };
 		D2618208288DA8F900EFBF9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2618207288DA8F900EFBF9A /* AppDelegate.swift */; };
 		D261820A288DA8F900EFBF9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2618209288DA8F900EFBF9A /* SceneDelegate.swift */; };
 		D261820C288DA8F900EFBF9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261820B288DA8F900EFBF9A /* HomeViewController.swift */; };
@@ -42,7 +43,20 @@
 		D2D6FC02288E294700C82FD1 /* TeamsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D6FC01288E294700C82FD1 /* TeamsRouter.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A65D4FFA28CA47A20000CD88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D26181FC288DA8F900EFBF9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2618203288DA8F900EFBF9A;
+			remoteInfo = Leagues;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		A65D4FF628CA47A10000CD88 /* LeaguesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeaguesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A65D4FFF28CA48A70000CD88 /* LeaguesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeaguesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A65D500028CA48A70000CD88 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		D2618204288DA8F900EFBF9A /* Leagues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leagues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2618207288DA8F900EFBF9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2618209288DA8F900EFBF9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +95,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A65D4FF328CA47A10000CD88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2618201288DA8F900EFBF9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,10 +112,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A65D4FF728CA47A10000CD88 /* LeaguesTests */ = {
+			isa = PBXGroup;
+			children = (
+				A65D500028CA48A70000CD88 /* HomeViewModelTests.swift */,
+				A65D4FFF28CA48A70000CD88 /* LeaguesTests-Bridging-Header.h */,
+			);
+			path = LeaguesTests;
+			sourceTree = "<group>";
+		};
 		D26181FB288DA8F900EFBF9A = {
 			isa = PBXGroup;
 			children = (
 				D2618206288DA8F900EFBF9A /* Leagues */,
+				A65D4FF728CA47A10000CD88 /* LeaguesTests */,
 				D2618205288DA8F900EFBF9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D2618204288DA8F900EFBF9A /* Leagues.app */,
+				A65D4FF628CA47A10000CD88 /* LeaguesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,6 +439,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A65D4FF528CA47A10000CD88 /* LeaguesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A65D4FFC28CA47A20000CD88 /* Build configuration list for PBXNativeTarget "LeaguesTests" */;
+			buildPhases = (
+				A65D4FF228CA47A10000CD88 /* Sources */,
+				A65D4FF328CA47A10000CD88 /* Frameworks */,
+				A65D4FF428CA47A10000CD88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A65D4FFB28CA47A20000CD88 /* PBXTargetDependency */,
+			);
+			name = LeaguesTests;
+			productName = LeaguesTests;
+			productReference = A65D4FF628CA47A10000CD88 /* LeaguesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D2618203288DA8F900EFBF9A /* Leagues */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2618218288DA8FC00EFBF9A /* Build configuration list for PBXNativeTarget "Leagues" */;
@@ -431,9 +481,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					A65D4FF528CA47A10000CD88 = {
+						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
+						TestTargetID = D2618203288DA8F900EFBF9A;
+					};
 					D2618203288DA8F900EFBF9A = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -453,11 +508,19 @@
 			projectRoot = "";
 			targets = (
 				D2618203288DA8F900EFBF9A /* Leagues */,
+				A65D4FF528CA47A10000CD88 /* LeaguesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A65D4FF428CA47A10000CD88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2618202288DA8F900EFBF9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +534,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A65D4FF228CA47A10000CD88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A65D500128CA48A70000CD88 /* HomeViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2618200288DA8F900EFBF9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -510,6 +581,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A65D4FFB28CA47A20000CD88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2618203288DA8F900EFBF9A /* Leagues */;
+			targetProxy = A65D4FFA28CA47A20000CD88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D2618212288DA8FC00EFBF9A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -522,6 +601,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A65D4FFD28CA47A20000CD88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7DSMQ8PN3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidmolina.LeaguesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "LeaguesTests/LeaguesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leagues.app/Leagues";
+			};
+			name = Debug;
+		};
+		A65D4FFE28CA47A20000CD88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7DSMQ8PN3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidmolina.LeaguesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "LeaguesTests/LeaguesTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leagues.app/Leagues";
+			};
+			name = Release;
+		};
 		D2618216288DA8FC00EFBF9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -641,11 +773,10 @@
 		D2618219288DA8FC00EFBF9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JAMB4MYQB2;
+				DEVELOPMENT_TEAM = T7DSMQ8PN3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leagues/Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -668,11 +799,10 @@
 		D261821A288DA8FC00EFBF9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JAMB4MYQB2;
+				DEVELOPMENT_TEAM = T7DSMQ8PN3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leagues/Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -695,6 +825,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A65D4FFC28CA47A20000CD88 /* Build configuration list for PBXNativeTarget "LeaguesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A65D4FFD28CA47A20000CD88 /* Debug */,
+				A65D4FFE28CA47A20000CD88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D26181FF288DA8F900EFBF9A /* Build configuration list for PBXProject "Leagues" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
